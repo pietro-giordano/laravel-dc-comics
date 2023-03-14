@@ -1,33 +1,21 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+      <head>
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+            <title>LaravelComics</title>
+            @vite('resources/js/app.js')
+      </head>
+      <body>
 
-        <title>Laravel 9 + Bootstrap Template</title>
-
-        {{-- Includiamo gli assets con la direttiva @vite --}}
-        @vite('resources/js/app.js')
-    </head>
-    <body>
-
-        <main>
-            <div class="container">
-                <div class="row">
-                    <div class="col text-center">
-
+            <div class="card-container">
+                  @foreach ($comics as $comic)
                         <div class="card">
-                            <div class="card-body">
-                                <img src="{{ Vite::asset('resources/img/laravel.png') }}" alt="">
-
-                                <h1 class="card-title">Laravel 9 + Bootstrap Template</h1>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
+                              <img src="{{ Vite::asset($comic['thumb']) }}" alt="{{ $comic['series'] }}">
+                              <p>{{ $comic['series'] }}</p>
+                        </div>   
+                  @endforeach
             </div>
-        </main>
 
-    </body>
+      </body>
 </html>
