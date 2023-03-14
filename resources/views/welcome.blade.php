@@ -1,21 +1,15 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-      <head>
-            <meta charset="utf-8">
-            <meta name="viewport" content="width=device-width, initial-scale=1">
-            <title>LaravelComics</title>
-            @vite('resources/js/app.js')
-      </head>
-      <body>
+@extends('layouts.app')
 
-            <div class="card-container">
-                  @foreach ($comics as $comic)
-                        <div class="card">
-                              <img src="{{ Vite::asset($comic['thumb']) }}" alt="{{ $comic['series'] }}">
-                              <p>{{ $comic['series'] }}</p>
-                        </div>   
-                  @endforeach
+@section('content')
+    <div class="card-container">
+            <div class="card-body">
+                  <div class="card">
+                        <h1 class="card-title">DC Comics</h1>
+
+                        <a href="{{ route('comics.index') }}" class="btn btn-primary">
+                              Vai ai fumetti
+                        </a>
+                  </div>   
             </div>
-
-      </body>
-</html>
+      </div>
+@endsection
