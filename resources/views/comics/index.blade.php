@@ -35,22 +35,36 @@
                                                 <i class="fa-solid fa-pen"></i>
                                           </a>
 
+                                          <button class="btn btn-danger" id="modalButton">
+                                                <i class="fa-solid fa-trash"></i>
+                                          </button>
+                                    </td>
+                              </tr>
+
+                              <div id="deleteModal" class="modale">
+                                    <div class="modal-content">
+                                          <p>Confermi di voler cancellare?</p>
+                        
                                           <form action="{{ route('comics.destroy', $comic->id) }}" method="POST" class="d-inline">
                                                 @csrf
                                                 @method('DELETE')
                                                 
                                                 <button type="submit" class="btn btn-danger">
-                                                      <i class="fa-solid fa-trash"></i>
+                                                      Elimina
                                                 </button>
                                           </form>
-                                    </td>
-                              </tr>
+                        
+                                          <button type="submit" class="btn btn-primary mt-2" id="noneButton">
+                                                Annulla
+                                          </button>
+                                    </div>
+                              </div>      
                               @endforeach
                         </tbody>
                   </table>
-
             </div>
       </div>
+      
 @endsection
 
 
