@@ -11,20 +11,20 @@ import.meta.glob([
       '../img/**'
 ]);
 
-const modal = document.getElementById("deleteModal");
-const modalButton = document.getElementById("modalButton");
-const noneButton = document.getElementById("noneButton");
+// let modal = document.getElementsByClassName("modale");
+// let modalButton = document.getElementsByClassName("modalButton");
+// let noneButton = document.getElementsByClassName("noneButton");
 
-modalButton.onclick = function () {
-      modal.style.display = "block";
-}
+// document.getElementsByClassName("modalButton").onclick = function () {
+//       document.getElementsByClassName("modale").style.display = "block";
+// }
 
-noneButton.onclick = function () {
-      modal.style.display = "none";
-}
+// document.getElementsByClassName("noneButton").onclick = function () {
+//       document.getElementsByClassName("modale").style.display = "none";
+// }
 
-window.onclick = function (event) {
-      if (event.target == modal) {
-            modal.style.display = "none";
-      }
-}
+// window.onclick = function (event) {
+//       if (event.target == modal) {
+//             document.getElementsByClassName("modale").style.display = "none";
+//       }
+// }

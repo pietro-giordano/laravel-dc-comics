@@ -20,7 +20,7 @@
                               </tr>
                         </thead>
                         <tbody>
-                              @foreach ($comics as $comic)
+                              @foreach ($comics as $key => $comic)
                               <tr>
                                     <th scope="row">{{ $comic->id }}</th>
                                     <td>{{ $comic->title }}</td>
@@ -35,13 +35,13 @@
                                                 <i class="fa-solid fa-pen"></i>
                                           </a>
 
-                                          <button class="btn btn-danger" id="modalButton">
+                                          <button class="btn btn-danger modalButton">
                                                 <i class="fa-solid fa-trash"></i>
                                           </button>
                                     </td>
                               </tr>
 
-                              <div id="deleteModal" class="modale">
+                              <div class="modale">
                                     <div class="modal-content">
                                           <p>Confermi di voler cancellare?</p>
                         
@@ -54,11 +54,27 @@
                                                 </button>
                                           </form>
                         
-                                          <button type="submit" class="btn btn-primary mt-2" id="noneButton">
+                                          <button type="submit" class="btn btn-primary mt-2 noneButton">
                                                 Annulla
                                           </button>
                                     </div>
                               </div>      
+
+                              <script>
+                                    document.getElementsByClassName("modalButton")[{{ $key }}].onclick = function () {
+                                          document.getElementsByClassName("modale")[{{ $key }}].style.display = "block";
+                                    }
+
+                                    document.getElementsByClassName("noneButton")[{{ $key }}].onclick = function () {
+                                          document.getElementsByClassName("modale")[{{ $key }}].style.display = "none";
+                                    }
+
+                                    window.onclick = function (event) {
+                                          if (event.target == document.getElementsByClassName("modale")[{{ $key }}]) {
+                                                document.getElementsByClassName("modale")[{{ $key }}].style.display = "none";
+                                          }
+                                    }
+                              </script>
                               @endforeach
                         </tbody>
                   </table>
