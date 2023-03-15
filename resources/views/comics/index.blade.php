@@ -30,12 +30,19 @@
                                           <a href="{{ route('comics.show', $comic->id) }}" class="btn btn-primary">
                                                 <i class="fa-solid fa-magnifying-glass"></i>
                                           </a>
+
                                           <a href="{{ route('comics.edit', $comic->id) }}" class="btn btn-warning">
                                                 <i class="fa-solid fa-pen"></i>
                                           </a>
-                                          <a href="{{ route('comics.show', $comic->id) }}" class="btn btn-danger">
-                                                <i class="fa-solid fa-trash"></i>
-                                          </a>
+
+                                          <form action="{{ route('comics.destroy', $comic->id) }}" method="POST" class="d-inline">
+                                                @csrf
+                                                @method('DELETE')
+                                                
+                                                <button type="submit" class="btn btn-danger">
+                                                      <i class="fa-solid fa-trash"></i>
+                                                </button>
+                                          </form>
                                     </td>
                               </tr>
                               @endforeach
