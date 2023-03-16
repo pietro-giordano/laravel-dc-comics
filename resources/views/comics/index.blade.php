@@ -4,7 +4,7 @@
       <div class="container">
             <div class="row">
                   <div class="col-2">
-                        <a href="{{ route('comics.create') }}" class="btn btn-success">
+                        <a href="{{ route('comics.create') }}" class="btn btn-success mb-2">
                               Crea nuovo prodotto
                         </a>
                   </div>
@@ -54,7 +54,7 @@
                                                 </button>
                                           </form>
                         
-                                          <button type="submit" class="btn btn-primary mt-2 noneButton">
+                                          <button type="submit" class="btn btn-secondary mt-2 noneButton">
                                                 Annulla
                                           </button>
                                     </div>

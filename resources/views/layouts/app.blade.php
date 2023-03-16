@@ -9,17 +9,24 @@
       </head>
       <body>
 
-            <header>
-                  HEADER
-            </header>
+            <div class="overlay overflow-hidden">
 
-            <main>
-                  @yield('content')
-            </main>
+                  <header>
+                        <div class="row d-flex justify-content-center">
+                              <div class="col-2">
+                                    <img src="{{ Vite::asset('resources/img/DC_Comics_logo.svg') }}" alt="" class="w-100 rounded my-2">
+                              </div>
+                        </div>
+                  </header>
+      
+                  <main>
+                        @yield('content')
+                  </main>
+      
+                  <footer>
+                  </footer>
 
-            <footer>
-                  FOOTER
-            </footer>
+            </div>
 
       </body>
 </html>

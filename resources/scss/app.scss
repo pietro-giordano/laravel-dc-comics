@@ -1,5 +1,18 @@
 @import '~bootstrap/scss/bootstrap';
 
+body {
+      min-height: 100vh;
+      background-image: url('../img/99629.jpg');
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+
+      .overlay {
+            background-color: rgba($color: #ffffff, $alpha: 0.7);
+            min-height: 100vh;
+      }
+}
+
 .modale {
       display: none;
       position: fixed;

@@ -38,6 +38,8 @@ class ComicController extends Controller
       {
             $data = $request->all();
 
+            // $newComic = Comic::create($data);      col mass assignment potrei creare così 
+
             $newComic = new Comic();
             $newComic->title = $data['title'];
             $newComic->description = $data['description'];

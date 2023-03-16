@@ -4,7 +4,7 @@
       <div class="container">
             <h1 class="text-center">Update comic #{{ $comic->id }}</h1>
             
-            <div class="row">
+            <div class="row mb-3">
                   <div class="col-3"></div>
                   <div class="col-6">
 
@@ -53,5 +53,5 @@
 
                   </div>
             </div>
-      </div>
+            
 @endsection
