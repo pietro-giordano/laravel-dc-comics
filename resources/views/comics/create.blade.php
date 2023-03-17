@@ -22,31 +22,31 @@
 
                               <div class="mb-2">
                                     <label for="title" class="form-label">Title: *</label>
-                                    <input type="text" class="form-control" name="title" id="title" required minlength="5" maxlength="255" placeholder="Insert title...">
+                                    <input type="text" class="form-control" name="title" id="title" value="{{ old('title') }}" required minlength="5" maxlength="255" placeholder="Insert title...">
                               </div>
                               <div class="mb-2">
                                     <label for="series" class="form-label">Series: *</label>
-                                    <input type="text" class="form-control" name="series" id="series" required minlength="5" maxlength="255" placeholder="Insert series...">
+                                    <input type="text" class="form-control" name="series" id="series" value="{{ old('series') }}" required minlength="5" maxlength="255" placeholder="Insert series...">
                               </div>
                               <div class="mb-2">
                                     <label for="type" class="form-label">Type: *</label>
-                                    <input type="text" class="form-control" name="type" id="type" required minlength="5" maxlength="255" placeholder="Insert type...">
+                                    <input type="text" class="form-control" name="type" id="type" value="{{ old('type') }}" required minlength="5" maxlength="255" placeholder="Insert type...">
                               </div>
                               <div class="mb-2">
                                     <label for="sale_date" class="form-label">Sale date: *</label>
-                                    <input type="date" class="form-control" name="sale_date" id="sale_date" required min="2000-01-01" max="2024-12-12">
+                                    <input type="date" class="form-control" name="sale_date" id="sale_date" value="{{ old('sale_date') }}" required min="2000-01-01" max="2024-12-12">
                               </div>
                               <div class="mb-2">
                                     <label for="price" class="form-label">Price: *</label>
-                                    <input type="number" class="form-control" name="price" id="price" required min="1" max="999" placeholder="Insert price...">
+                                    <input type="number" class="form-control" name="price" id="price" value="{{ old('price') }}" required min="1" max="999" step="0.01" placeholder="Insert price...">
                               </div>
                               <div class="mb-2">
                                     <label for="description" class="form-label">Description:</label>
-                                    <textarea type="text" class="form-control" name="description" id="description" placeholder="Insert description..." rows="3"></textarea>
+                                    <textarea type="text" class="form-control" name="description" id="description" placeholder="Insert description..." rows="3">{{ old('description') }}</textarea>
                               </div>
                               <div class="mb-2">
                                     <label for="thumb" class="form-label">Thumb Url:</label>
-                                    <input type="text" class="form-control" name="thumb" id="thumb" placeholder="Insert thumb url...">
+                                    <input type="text" class="form-control" name="thumb" id="thumb" value="{{ old('thumb') }}" placeholder="Insert thumb url...">
                               </div>
 
                               <p>I campi con * sono obbligatori</p>

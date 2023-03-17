@@ -23,31 +23,31 @@
 
                               <div class="mb-2">
                                     <label for="title" class="form-label">Title: *</label>
-                                    <input type="text" class="form-control" name="title" id="title" required minlength="5" maxlength="255" placeholder="Insert title..." value="{{ $comic->title }}">
+                                    <input type="text" class="form-control" name="title" id="title" required minlength="5" maxlength="255" placeholder="Insert title..." value="{{ old('title', $comic->title) }}">
                               </div>
                               <div class="mb-2">
                                     <label for="series" class="form-label">Series: *</label>
-                                    <input type="text" class="form-control" name="series" id="series" required minlength="5" maxlength="255" placeholder="Insert series..." value="{{ $comic->series }}">
+                                    <input type="text" class="form-control" name="series" id="series" required minlength="5" maxlength="255" placeholder="Insert series..." value="{{ old('series' $comic->series) }}">
                               </div>
                               <div class="mb-2">
                                     <label for="type" class="form-label">Type: *</label>
-                                    <input type="text" class="form-control" name="type" id="type" required minlength="5" maxlength="255" placeholder="Insert type..." value="{{ $comic->type }}">
+                                    <input type="text" class="form-control" name="type" id="type" required minlength="5" maxlength="255" placeholder="Insert type..." value="{{ old('type' $comic->type) }}">
                               </div>
                               <div class="mb-2">
                                     <label for="sale_date" class="form-label">Sale date: *</label>
-                                    <input type="date" class="form-control" name="sale_date" id="sale_date" required min="2000-01-01" max="2024-12-12" value="{{ $comic->sale_date }}">
+                                    <input type="date" class="form-control" name="sale_date" id="sale_date" required min="2000-01-01" max="2024-12-12" value="{{ old('sale_date' $comic->sale_date) }}">
                               </div>
                               <div class="mb-2">
                                     <label for="price" class="form-label">Price: *</label>
-                                    <input type="number" class="form-control" name="price" id="price" required min="1.00" max="999.99" placeholder="Insert price..." value="{{ $comic->price }}">
+                                    <input type="number" class="form-control" name="price" id="price" required min="1" max="999" step="0.01" placeholder="Insert price..." value="{{ old('price' $comic->price) }}">
                               </div>
                               <div class="mb-2">
                                     <label for="description" class="form-label">Description:</label>
-                                    <textarea type="text" class="form-control" name="description" id="description" placeholder="Insert description..." rows="3">{{ $comic->description }}</textarea>
+                                    <textarea type="text" class="form-control" name="description" id="description" placeholder="Insert description..." rows="3">{{ old('description' $comic->description) }}</textarea>
                               </div>
                               <div class="mb-2">
                                     <label for="thumb" class="form-label">Thumb Url:</label>
-                                    <input type="text" class="form-control" name="thumb" id="thumb" placeholder="Insert thumb url..." value="{{ $comic->thumb }}">
+                                    <input type="text" class="form-control" name="thumb" id="thumb" placeholder="Insert thumb url..." value="{{ old('thumb' $comic->thumb) }}">
                               </div>
 
                               <p>I campi con * sono obbligatori</p>
