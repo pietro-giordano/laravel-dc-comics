@@ -10,13 +10,16 @@ class ComicController extends Controller
 {
       private function validateData($data)
       {
-            Validator::make($data, [
+            $validator = Validator::make($data, [
                   'title' => 'required|min:5|max:255',
                   'series' => 'required|min:5|max:255',
                   'type' => 'required|min:5|max:255',
                   'sale_date' => 'date|after_or_equal:2000-01-01|before_or_equal:2024-12-12',
                   'price' => 'required|min:1|max:999|decimal:2',
+            ], [
+                  'required' => 'SVEGLIAAA!! Hai dimenticato un campo obbligatorio!'
             ])->validate();
+            return $validator;
       }
 
       /**
