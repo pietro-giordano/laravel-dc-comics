@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Comic;
 use Illuminate\Support\Facades\Validator;
+use App\Http\Requests\ComicRequest;
 
 class ComicController extends Controller
 {
@@ -49,11 +50,11 @@ class ComicController extends Controller
        * @param  \Illuminate\Http\Request  $request
        * @return \Illuminate\Http\Response
        */
-      public function store(Request $request)
+      public function store(ComicRequest $request)
       {
-            $data = $request->all();
+            $data = $request->validated();
 
-            $this->validateData($data);
+            // $this->validateData($data);
 
             // $newComic = Comic::create($data);      col mass assignment potrei creare così 
 
@@ -102,12 +103,12 @@ class ComicController extends Controller
        * @param  int  $id
        * @return \Illuminate\Http\Response
        */
-      public function update(Request $request, $id)
+      public function update(ComicRequest $request, $id)
       {
             $comic = Comic::findOrFail($id);
-            $data = $request->all();
+            $data = $request->validated();
 
-            $this->validateData($data);
+            // $this->validateData($data);
 
             $comic->update($data);
             return redirect()->route('comics.index');
